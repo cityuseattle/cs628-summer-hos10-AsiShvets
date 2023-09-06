@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./navbar";
  
 const Record = (props) => (
  <tr>
@@ -25,7 +26,7 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`https://fluffy-space-meme-6jrrw9gvv47244qx-5050.app.github.dev/record`);
+     const response = await fetch(`https://stunning-acorn-gg5564qx69pc97v4-5050.app.github.dev/record`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
@@ -44,7 +45,7 @@ export default function RecordList() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-   await fetch(`https://fluffy-space-meme-6jrrw9gvv47244qx-5050.app.github.dev/record/${id}`, {
+   await fetch(`https://stunning-acorn-gg5564qx69pc97v4-5050.app.github.dev/record/${id}`, {
      method: "DELETE"
    });
  
@@ -68,6 +69,7 @@ export default function RecordList() {
  // This following section will display the table with the records of individuals.
  return (
    <div>
+    <Navbar />
      <h3>Record List</h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
